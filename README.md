@@ -17,7 +17,7 @@ Un modèle de solution est fourni à titre d'exemple: TemplateAspNetCoreAPI.xml
 ## Pré-requis:
 
 - Etre administrateur de sa machine 
-- Powershell doit être activé Exécuter powershell en tant qu'administrateur, puis la commande: 
+- Powershell doit être activé, pour cela exécuter powershell en tant qu'administrateur, puis la commande: 
 ```
 Set-Executionpolicy RemoteSigned
 ```
