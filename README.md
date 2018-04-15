@@ -3,25 +3,25 @@ Xml to (Visual Studio) Solution
 
 # Description
 
-X2SLN est un utilitaire qui permet d'automatiser la création d'une solution Visual Studio .NET Core à partir d'un fichier de description XML.
-Cette description s'inspire de l'abstraction C4Model décrite ici: https://c4model.com/
-Les concepts C4 ont été "mappés" de la façon suivante:
+X2SLN is utility for generate Visual Studio .NET Core solution from a XML description file.
+The description follows a XML Schema based on C4Model abstraction (https://c4model.com/).
+XML Tags map the following C4 concepts:
 
-- &lt;SoftwareSystem/> représente une solution Visual Studio 2017
-- &lt;Container/> représente un projet (.csproj) Visual Studio 2017
-- &lt;Component/> représente un package Nuget
-- &lt;RelationShip/> représente une référence (dépendance) projet
+- &lt;SoftwareSystem/> maps a Visual Studio solution (.sln)
+- &lt;Container/> maps a Visual Studio project (.csproj)
+- &lt;Component/> maps a Nuget package
+- &lt;RelationShip/> maps a project dependency (reference)
 
-Un modèle de solution est fourni à titre d'exemple: TemplateAspNetCoreAPI.xml
+TemplateAspNetCoreAPI.xml is an example of C4Model description.
 
-## Pré-requis:
+## Requirements:
 
-- Etre administrateur de sa machine 
-- Powershell doit être activé, pour cela exécuter powershell en tant qu'administrateur, puis la commande: 
+- Must be administrator 
+- Powershell must be activated, for this run the following command as administrator: 
 ```
 Set-Executionpolicy RemoteSigned
 ```
-- .NET Core SDK doit être installé
+- .NET Core SDK installed
 
 
 # Installation
@@ -30,9 +30,9 @@ Set-Executionpolicy RemoteSigned
 git clone https://github.com/ro2K/X2SLN.git
 ```
 
-# Utilisation
+# Usage
 
-Syntaxe:
+Syntax:
 
 ``` 
 x2sln.cmd [NameOfSolutionModel.xml] [NameOfSolution] 
@@ -41,16 +41,15 @@ x2sln.cmd [NameOfSolutionModel.xml] [NameOfSolution]
 Example:
 
 ```
-x2sln.cmd TemplateAspNetCoreAPI.xml WemanityProject
+x2sln.cmd TemplateAspNetCoreAPI.xml MyProject
 ```
 
-==> La solution sera générée dans ./WemanityProject/src
+==> Solution is generated in ./MyProject/src folder.
 
-## Remarque:
+## Remarks:
 
-TemplateAspNetCoreAPI.xml est associé par défaut avec la feuille de style SolutionModel2cmd.xsl, en ouvrant ce fichier XML via un navigateur moderne,
-on obtient directement la transformation qui correspond au batch d'initialisation avec les commandes donet create ...
-
+TemplateAspNetCoreAPI.xml is associated by default with SolutionModel2cmd.xsl styleshet.
+By opening this XML file with browser (IE, Edge, FireFox) the transformation is directly executed and shows the command line batch with the dotnet new... commands.
 
 
 
