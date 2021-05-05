@@ -17,22 +17,22 @@
     </Container>
     <Container id="%project%.Business.Services" technology="classlib"/>
     <Container id="%project%.Business.Entities" technology="classlib">
-	  <Components>
+	 <Components>
 	    <Component id="Newtonsoft.Json" technology="nuget"/>
-	  </Components>	
+	</Components>	
 	</Container>
-  <Container id="%project%.Interfaces" technology="classlib">
+        <Container id="%project%.Interfaces" technology="classlib">
 	  <Components>
 	    <Component id="Newtonsoft.Json" technology="nuget"/>
 	  </Components>
 	</Container>
-    <Container id="%project%.Client.Services" technology="classlib">
+        <Container id="%project%.Client.Services" technology="classlib">
 	  <Components>
 	    <Component id="Newtonsoft.Json" technology="nuget"/>
-		<Component id="ModernHttpClient" technology="nuget"/>
+	    <Component id="ModernHttpClient" technology="nuget"/>
 	  </Components>
 	</Container>
-    <Container id="%project%.Infrastructure" technology="classlib">
+      <Container id="%project%.Infrastructure" technology="classlib">
       <Components>
         <Component id="Microsoft.EntityFrameworkCore" technology="nuget"/>
         <Component id="Microsoft.EntityFrameworkCore.SqlServer" technology="nuget"/>
@@ -55,7 +55,7 @@
     <RelationShip sourceId="%project%.Business.Services" targetId="%project%.Business.Entities"/>
     <RelationShip sourceId="%project%.Business.Services" targetId="%project%.Infrastructure"/>
     <RelationShip sourceId="%project%.Infrastructure" targetId="%project%.Interfaces"/>
-	<RelationShip sourceId="%project%.Infrastructure" targetId="%project%.Business.Entities"/>
+    <RelationShip sourceId="%project%.Infrastructure" targetId="%project%.Business.Entities"/>
     <RelationShip sourceId="%project%.Client.Services" targetId="%project%.Business.Entities"/>
   </RelationShips>
 </SoftwareSystem>
